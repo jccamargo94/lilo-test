@@ -73,7 +73,7 @@ The script `Q1.py` reads data from `input.csv`, processes each row in parallel, 
 
 The script `Q2.py` runs the NYC Taxi Trips analysis, and saves the output
 
-1.  **Data Download:** Download the data in any path, by default I'll assume data will be placed at `data/Q2/`
+1.  **Data Download:** Download (You can use [Google Drive](https://drive.google.com/drive/folders/1LguKlptRcVfXaJ_I3diLoNhY9QIYwW19?usp=sharing))the data in any path, by default I'll assume data will be placed at `data/Q2/`
 2.  Run the script from your activated virtual environment:
     ```shell
     python Q2.py
