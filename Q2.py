@@ -5,7 +5,7 @@ import os
 import plotly.graph_objects as go
 import polars as pl
 from skrub import tabular_pipeline
-from sklearn.linear_model import ElasticNet
+from sklearn.linear_model import LinearRegression
 from plotly.subplots import make_subplots
 
 
@@ -161,12 +161,19 @@ if __name__ == "__main__":
                 X_group = group_data.select(pl.col("trip_distance"), pl.col("trip_duration_minutes"))
                 y_group = group_data.select(pl.col("fare_amount"))
                 
-                group_model = tabular_pipeline(ElasticNet(fit_intercept=False, positive=True), n_jobs=-1)
+                group_model = tabular_pipeline(
+                    LinearRegression(
+                         fit_intercept=False,
+                         positive=True,
+                         n_jobs=-1,
+                    ),
+                    n_jobs=-1,
+                    )
                 group_model.fit(X_group, y_group)
             
                 rate_code_id = group_data["RatecodeID"].first()
-                median_rate_per_mile = group_model[-1].coef_[0]
-                median_rate_per_minute = group_model[-1].coef_[1]
+                median_rate_per_mile = group_model[-1].coef_[0][0]
+                median_rate_per_minute = group_model[-1].coef_[0][1]
                 
                 grouped_results.append({
                     "RatecodeID": rate_code_id,

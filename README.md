@@ -127,7 +127,7 @@ This approach focuses on calculating the median cost-per-mile for taxi trips, wh
 
 I've used two main approaches here:
 - The first approach involves a straightforward calculation of the median cost-per-mile and cost-per-minute for each Rate Code, using the available trip data. This provides a clear and easily interpretable metric for understanding pricing variations, although it may not fully capture the pricing dynamics.
-- The second approach incorporates an ElasticNet regression model to predict the cost-per-mile and cost-per-minute based on both trip distance and duration. This approach improves our understanding of the factors driving pricing by computing coefficients for each feature.
+- The second approach incorporates an ElasticNet regression model to predict the cost-per-mile and cost-per-minute based on both trip distance and duration using `fare-cost` as target. This approach is supposed to improve our understanding of the factors driving pricing by computing coefficients for each feature.
 
 In the first approach, I computed the median cost-per-mile for each Rate Code by aggregating the trip data and computing the median value. The latter approach builds an ElasticNet model to account for variables, it allows for a more fine-grained analysis of how different factors impact pricing.
 
