@@ -1,7 +1,6 @@
 # Lilo Interview Challenge
 
-This repository contains the solutions for the Lilo take-home interview challenge. P
-
+This repository contains the solutions for the Lilo take-home interview challenge.
 ## How to Run the Solutions
 
 This guide provides step-by-step instructions to set up the environment and run the solutions for both questions.
